@@ -9,4 +9,8 @@ public class UserService {
     public User login(String username, String password) {
         return userRepository.findByUsernameAndPassword(username, password);
     }
+    public void register(String username, String password, String role) {
+        User user = new User(username, password, role);
+        userRepository.save(user);
+    }
 }

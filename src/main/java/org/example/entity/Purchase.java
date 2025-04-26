@@ -2,12 +2,14 @@ package org.example.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
+@Setter
 @Getter
 @Entity
-@Table(name = "orders")
+@Table(name = "purchase")
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,21 +24,4 @@ public class Purchase {
     @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    // Getters and Setters
 }
