@@ -1,30 +1,51 @@
 package org.example.entity;
 
+
+
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
-import java.util.List;
-import java.util.UUID;
-@Entity(name = "books")
-@Data
-@RequiredArgsConstructor
+@Entity
+@Table(name = "books")
 public class Book {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String title;
+    private String author;
+    private int quantity;
 
-    private int yearOfRelease;
-    private String authorName;
-    private double price;
-    private int pages;
+    public int getId() {
+        return id;
+    }
 
-    @ManyToOne
-    private Genre genre;
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    // Getters and Setters
 }
