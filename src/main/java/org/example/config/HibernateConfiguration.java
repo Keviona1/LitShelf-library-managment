@@ -15,6 +15,7 @@ import java.util.Properties;
 
 public class HibernateConfiguration {
 
+    @Getter
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
@@ -47,7 +48,4 @@ public class HibernateConfiguration {
         }
     }
 
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
 }
